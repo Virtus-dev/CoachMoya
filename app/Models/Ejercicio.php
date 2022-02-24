@@ -25,7 +25,7 @@ class Ejercicio extends Model
 
     public function entrenos(){
         
-        return $this->morphToMany(Entreno::class,'trainable')
+        return $this->morphToMany(Entreno::class,'trainable');
     }
 
 }
