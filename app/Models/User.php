@@ -21,6 +21,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'RM_Historico_Squat',
+        'RM_Historico_Bench',
+        'RM_Historico_DeadLift'
     ];
 
     /**

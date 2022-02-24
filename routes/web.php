@@ -3,6 +3,8 @@
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Ejercicio;
+use App\Models\Set;
+use App\Models\Rep;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,16 +24,11 @@ use App\Models\Ejercicio;
 Route::get('/',[PagesController::class, 'index'] );
 Route::get('/aboutUS',[PagesController::class,'aboutUs']);
 Route::get('/create', function(){
-    $ejercicios=new Ejercicio;
-    $ejercicios->Nombre_Ejercicio='Press banca';
-    $ejercicios->Sets=4;
-    $ejercicios->Reps=10;
-    $ejercicios->Marca=200;
-    $ejercicios->Marca_Cliente=180;
-    $ejercicios->Observaciones="nada";
-    $ejercicios->save();
+
+    $sets=new Rep;
+    $sets->save();
 
 });
 
-Route::get('/xio',[PagesController::class,'create']);
+Route::get('/xio/{nomEjercicio}/{sets}/{reps}/{marca}/{marcaCliente}/{observaciones}',[PagesController::class,'create']);
 

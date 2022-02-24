@@ -31,18 +31,18 @@ class PagesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(string $nomEjercicio,int $sets,int $reps,float $marca,float $marcaCliente,string $observaciones)
     {
         //
         
 
         $ejercicio = Ejercicio::create([
-            'Nombre_Ejercicio' => 'Squat',
-            'Sets' => 4,
-            'Reps'=>3,
-            'Marca'=>150,
-            'Marca_Cliente'=>150,
-            'Observaciones'=>"Nada"
+            'Nombre_Ejercicio' => $nomEjercicio,
+            'Sets' => $sets,
+            'Reps'=>$reps,
+            'Marca'=>$marca,
+            'Marca_Cliente'=>$marcaCliente,
+            'Observaciones'=>$observaciones
         ]);
      
     }

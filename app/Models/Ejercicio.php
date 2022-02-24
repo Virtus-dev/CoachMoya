@@ -9,14 +9,23 @@ class Ejercicio extends Model
 {
     use HasFactory;
 
+    //permiso a laravel para modificar varios campos
+   /*
     protected $fillable=[
         'Nombre_Ejercicio',
         'Sets',
         'Reps',
+        'RM_Historico',
         'Marca',
         'Marca_Cliente',
         'Observaciones'
 
     ];
+    */
+
+    public function entrenos(){
+        
+        return $this->morphToMany(Entreno::class,'trainable')
+    }
 
 }

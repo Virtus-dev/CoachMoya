@@ -19,6 +19,9 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->decimal('RM_Historico_Squat');
+            $table->decimal('RM_Historico_Bench');
+            $table->decimal('RM_Historico_DeadLift');
             $table->rememberToken();
             $table->timestamps();
         });
