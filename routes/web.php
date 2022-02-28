@@ -1,10 +1,6 @@
 <?php
 
-use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
-use App\Models\Ejercicio;
-use App\Models\Set;
-use App\Models\Rep;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,18 +13,18 @@ use App\Models\Rep;
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
-});
-*/
-Route::get('/',[PagesController::class, 'index'] );
-Route::get('/aboutUS',[PagesController::class,'aboutUs']);
-Route::get('/create', function(){
-
-    $sets=new Rep;
-    $sets->save();
-
+Route::get('/', function () {
+    return view('grid.grid');
 });
 
-Route::get('/xio/{nomEjercicio}/{sets}/{reps}/{marca}/{marcaCliente}/{observaciones}',[PagesController::class,'create']);
+Route::get('/inicio', function () {
+    return view('grid.grid'); 
+});
 
+Route::get('/entrenamientos', function () {
+    return view('../entrenamientos');
+});
+
+Route::get('/Moya', function () {
+    return view('../Moya');
+});
