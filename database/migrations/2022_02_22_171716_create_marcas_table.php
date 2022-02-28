@@ -15,6 +15,8 @@ class CreateMarcasTable extends Migration
     {
         Schema::create('marcas', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('ejercicio_id');
+            $table->foreign('ejercicio_id')-references('id')->on('ejercicios');
             $table->timestamps();
         });
     }

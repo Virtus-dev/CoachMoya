@@ -23,9 +23,24 @@ class Ejercicio extends Model
     ];
     */
 
-    public function entrenos(){
+    public function reps(){
         
-        return $this->morphToMany(Entreno::class,'trainable');
+        return $this->hasOne('App\Models\Rep');
+    }
+
+    public function sets()
+    {
+        return $this->hasOne(Set::class);
+    }
+
+    public function marcas()
+    {
+        return $this->hasOne(Marca::class);
+    }
+
+    public function marcaCliente()
+    {
+        return $this->hasOne(MarcaCliente::class);
     }
 
 }

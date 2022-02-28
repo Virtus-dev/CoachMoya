@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Set extends Model
+class MarcaCliente extends Model
 {
     use HasFactory;
 
     public function ejercicios()
     {
-        return $this->belongsToMany('App\Models\Ejercicio');
+        return $this->belongsTo('App\Models\Ejercicio');
     }
 }

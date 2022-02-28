@@ -23,12 +23,7 @@ use App\Models\Rep;
 */
 Route::get('/',[PagesController::class, 'index'] );
 Route::get('/aboutUS',[PagesController::class,'aboutUs']);
-Route::get('/create', function(){
 
-    $sets=new Rep;
-    $sets->save();
 
-});
 
-Route::get('/xio/{nomEjercicio}/{sets}/{reps}/{marca}/{marcaCliente}/{observaciones}',[PagesController::class,'create']);
 
