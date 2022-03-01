@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRepsTable extends Migration
+class AddForeignKeyToMarcasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateRepsTable extends Migration
      */
     public function up()
     {
-        Schema::create('reps', function (Blueprint $table) {
-            $table->id();
-            $table->integer('numero_reps');
-            $table->timestamps();
+        Schema::table('marcas', function (Blueprint $table) {
+            //
+            $table->unsignedBigInteger('ejercicio_id')->after('id');
+            $table->foreign('ejercicio_id')->references('id')->on('ejercicios');
         });
     }
 
@@ -27,6 +27,8 @@ class CreateRepsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reps');
+        Schema::table('marcas', function (Blueprint $table) {
+            //
+        });
     }
 }
