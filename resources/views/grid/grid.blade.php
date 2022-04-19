@@ -44,15 +44,16 @@
                     Clientes
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="entrenamientos">Aritz Gonzalez</a></li>
-                    <li><a class="dropdown-item" href="#">Xiomara Escobar</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-
-                    {{-- @foreach ($User as $User)
+                  @foreach($users as $user)
+                    <li><a class="dropdown-item" href="entrenamientos">{{$user->name}}</a></li>
+                   <!-- <li><a class="dropdown-item" href="#">Xiomara Escobar</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>-->
+                   @endforeach
+                   <!-- {{-- @foreach ($User as $User)
                         <tr>
                         <li><a class="dropdown-item" href="entrenamientos">{{ $Users->Nombre_Ejercicio }}</a></li>
                       @endforeach
-                    --}}
+                    --}}-->
                 </ul>
 
                 </ul>
@@ -65,7 +66,9 @@
             </nav>
         @yield('contenidoPrincipal')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    
+ 
+     
+  
 
   <div class="container" >
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top bg-dark">

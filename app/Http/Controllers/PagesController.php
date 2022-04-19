@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Ejercicio;
+use App\Models\User;
 
 class PagesController extends Controller
 {
@@ -15,7 +16,7 @@ class PagesController extends Controller
     public function index()
     {
         //
-        return view('welcome');
+        return view('grid.grid');
 
     }
 
@@ -56,6 +57,18 @@ class PagesController extends Controller
     public function store(Request $request)
     {
         //
+        $cliente=new User;
+        $cliente->name =$request-> firstName;
+        $cliente->apellido=$request->lastName;
+        $cliente->email=$request->email;
+
+        $cliente->save();
+        return back()->with('listo');
+    }
+
+    public function registro(Request $request)
+    {
+        return view('form');       
     }
 
     /**

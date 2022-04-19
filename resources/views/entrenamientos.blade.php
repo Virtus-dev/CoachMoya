@@ -21,7 +21,7 @@
         <td>{{ $ejercicios->Nombre_Ejercicio }}</td>
         <td>{{ $ejercicios->Sets }}</td>
         <td>{{ $ejercicios->Reps }}</td>
-        <td>{{ $ejercicios->RM_Historico }}</td>
+       <!-- <td>{{ $ejercicios->RM_Historico }}</td>-->
         <td>{{ $ejercicios->Marca }}</td>
         <td>{{ $ejercicios->Marca_Cliente }}</td>
         <td>{{ $ejercicios->Observaciones }}</td>
