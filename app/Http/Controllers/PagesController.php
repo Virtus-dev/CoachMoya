@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Ejercicio;
+use App\Models\User;
 
 class PagesController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      *
@@ -56,6 +59,20 @@ class PagesController extends Controller
     public function store(Request $request)
     {
         //
+        $cliente=new User;
+        $cliente->name =$request-> Nombre;
+        $cliente->apellido=$request->Apellido;
+        $cliente->email=$request->Email;
+        $cliente->password=$request->Contraseña;
+
+        $cliente->save();
+        return back()->with('listo');
+    }
+
+
+    public function registro(Request $request)
+    {
+        return view('nuevousuario');       
     }
 
     /**
@@ -102,4 +119,6 @@ class PagesController extends Controller
     {
         //
     }
+
 }
+

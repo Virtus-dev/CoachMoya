@@ -25,7 +25,7 @@ class Ejercicio extends Model
 
     public function reps(){
         
-        return $this->hasOne('App\Models\Rep');
+        return $this->hasOne(Rep::class);
     }
 
     public function sets()

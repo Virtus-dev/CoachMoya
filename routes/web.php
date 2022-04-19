@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PagesController;
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('grid.grid');
+    return view('../inicio');
 });
 
 Route::get('/inicio', function () {
-    return view('grid.grid'); 
+    return view('../inicio'); 
 });
 
 Route::get('/entrenamientos', function () {
@@ -28,3 +29,16 @@ Route::get('/entrenamientos', function () {
 Route::get('/Moya', function () {
     return view('../Moya');
 });
+
+Route::get('/nuevousuario', function () {
+    return view('/nuevousuario');
+});
+Route::post('/registrado', [PagesController::class,'store']);
+
+Route::get('/contrasenaolvidada', function () {
+    return view('../contrasenaolvidada');
+});
+
+
+
+Route::post('/posts', 'PostsController@store');

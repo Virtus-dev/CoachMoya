@@ -16,7 +16,7 @@ class CreateEjerciciosTable extends Migration
         Schema::create('ejercicios', function (Blueprint $table) {
             $table->id();
             $table->string('Nombre_Ejercicio');           
-            $table->string('Observaciones');
+            $table->string('Observaciones')->nullable(true);
             $table->timestamps();
 
         });
