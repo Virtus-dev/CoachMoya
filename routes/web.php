@@ -14,13 +14,9 @@ use App\Models\User;
 |
 */
 
-Route::get('/', function () {
-    return view('../inicio');
-});
+Route::get('/',[PagesController::class,'index']);
 
-Route::get('/inicio', function () {
-    return view('../inicio'); 
-});
+Route::get('/inicio',[PagesController::class,'index']);
 
 Route::get('/entrenamientos', function () {
     return view('../entrenamientos');
@@ -30,14 +26,12 @@ Route::get('/Moya', function () {
     return view('../Moya');
 });
 
-Route::get('/nuevousuario', function () {
-    return view('/nuevousuario');
+Route::get('/signUp', function () {
+    return view('/signUp');
 });
-Route::post('/registrado', [PagesController::class,'store']);
+Route::post('/registrado', [ClientsController::class,'storeClient']);
 
-Route::get('/contrasenaolvidada', function () {
-    return view('../contrasenaolvidada');
-});
+Route::get('/forgotPassword',[PagesController::class,'forgotPassword']);
 
 
 

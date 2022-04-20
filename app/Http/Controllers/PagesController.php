@@ -10,15 +10,11 @@ class PagesController extends Controller
 {
 
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         //
-        return view('welcome');
+        $users=User::all();
+        return view('inicio',compact('users'));
 
     }
 
@@ -29,96 +25,74 @@ class PagesController extends Controller
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create(string $nomEjercicio,int $sets,int $reps,float $marca,float $marcaCliente,string $observaciones)
+
+     //redirige a la pagina sign in
+    public function signIn()
+    {
+        //
+        return view('');
+       
+    }
+
+    public function signUp()
+    {
+        return view('signUp');
+    }
+
+    public function forgotPassword()
+    {
+
+        return view('forgotPassword');
+    }
+
+    public function editClient($id)
+    {
+        /*
+        retornar al cliente y sus entrenos para su modificacion
+        por ejemplo una vista de sus datos,microciclo en el que se encuentra
+        su RM historico,entre otros.
+        */
+        $editClient=User::find($id);
+        return view('',compact(editClient));
+    }
+
+
+    public function createClient(Request $request)
     {
         //
         
 
-        $ejercicio = Ejercicio::create([
-            'Nombre_Ejercicio' => $nomEjercicio,
-            'Sets' => $sets,
-            'Reps'=>$reps,
-            'Marca'=>$marca,
-            'Marca_Cliente'=>$marcaCliente,
-            'Observaciones'=>$observaciones
-        ]);
-     
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
         $cliente=new User;
         $cliente->name =$request-> Nombre;
         $cliente->apellido=$request->Apellido;
+        $cliente->edad =$request->edad;
         $cliente->email=$request->Email;
         $cliente->password=$request->Contraseña;
 
         $cliente->save();
-        return back()->with('listo');
+        return back()->with('success');
+       
     }
 
-
-    public function registro(Request $request)
+     //aqui devolvera la vista dirigida al usuario
+    public function showClientPage($id)
     {
-        return view('nuevousuario');       
+       
+        $user=User::find($id);
+        return view('',compact('user'));
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+
+     //devuelve una vista de todos los entrenamientos en curso
+    Public function showClientWorkouts($id)
     {
-        //
+        $workouts=Entreno::all()->where('user_id',$id);
+        $user=User::find($id);
+        return view('entrenamientos',compact('workouts','user'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 
 }
 

@@ -43,15 +43,9 @@
                     Clientes
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="entrenamientos">Aritz Gonzalez</a></li>
-                    <li><a class="dropdown-item" href="#">Xiomara Escobar</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-
-                    {{-- @foreach ($User as $User)
-                        <tr>
-                        <li><a class="dropdown-item" href="entrenamientos">{{ $Users->Nombre_Ejercicio }}</a></li>
-                      @endforeach
-                    --}}
+                  @foreach($users as $user)
+                    <li><a class="dropdown-item" href="entrenamientos">{{$user->name}} {{$user->apellido}}</a></li>
+                    @endforeach
                 </ul>
 
                 </ul>

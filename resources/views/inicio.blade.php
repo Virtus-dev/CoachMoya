@@ -61,7 +61,7 @@
       <a class="underlineHover" href="contrasenaolvidada">¿Has olvidado la contraseña?</a>
     </div>
     <div class="form-group">
-          <a href="nuevousuario" id="NuevoUsuario">¿Nuevo usuario?</a>
+          <a href="signUp" id="signUp">¿Nuevo usuario?</a>
     </div>
     <div class="d-flex justify-content-center" >
       <input type="submit" value= "Iniciar sesión" class="btn btn-primary btn-block btn-lg text-white">

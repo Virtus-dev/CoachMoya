@@ -9,6 +9,23 @@ class Entreno extends Model
 {
     use HasFactory;
 
+    protected $fillable=
+    [
+     'user_id',
+     'ejercicio',
+     'sets',
+     'reps',
+     'marca',
+     'marcaCliente'
+    ];
+
+
+
+    public function ejercicio()
+    {
+        return $this->hasMany(Ejercicio::class);
+    }
+
     public function sets()
     {
         return $this->hasOneTrough(Set::class,Ejercicio::class);
