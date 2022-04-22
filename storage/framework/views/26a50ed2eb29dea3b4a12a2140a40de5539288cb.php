@@ -56,7 +56,7 @@
     </div>
     <!-- Remind Passowrd -->
     <div id="formFooter">
-      <a class="underlineHover" href="contrasenaolvidada">¿Has olvidado la contraseña?</a>
+      <a class="underlineHover" href="forgotPassword">¿Has olvidado la contraseña?</a>
     </div>
     <div class="form-group">
           <a href="signUp" id="signUp">¿Nuevo usuario?</a>

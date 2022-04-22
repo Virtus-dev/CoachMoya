@@ -23,24 +23,25 @@ class Ejercicio extends Model
     ];
     */
 
-    public function reps(){
-        
-        return $this->hasOne(Rep::class);
+    public function entrenamiento()
+    {
+        return $this->belongsTo(Entreno::class);
     }
 
+    public function reps(){
+
+        return $this->hasOne(Rep::class);
+    }
     public function sets()
     {
         return $this->hasOne(Set::class);
     }
-
     public function marcas()
     {
         return $this->hasOne(Marca::class);
     }
-
     public function marcaCliente()
     {
         return $this->hasOne(MarcaCliente::class);
     }
-
 }

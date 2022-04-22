@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About us</title>
-</head>
-<body>
-    <div class="cabecera_about">
-    </div>
-</body>
-</html>
+@extends('grid.grid')
+@section('contenidoPrincipal')
+
+
+
+ //Esta es la pagina de moya, donde tenemos que poner las cosas que hacen referencia a sus permisos, etc
+
+<h2>SALE </h2>
+@endsection
+

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\ClientsController;
 use App\Models\User;
 /*
 |--------------------------------------------------------------------------
@@ -14,25 +15,29 @@ use App\Models\User;
 |
 */
 
-Route::get('/',[PagesController::class,'index']);
+Route::get('/',[PagesController::class,'welcome']);
 
-Route::get('/inicio',[PagesController::class,'index']);
+// Route::get('/signIn',[PagesController::class,'signIn']);
 
-Route::get('/entrenamientos', function () {
-    return view('../entrenamientos');
-});
+Route::get('/workouts',[PagesController::class,'workouts']);
 
-Route::get('/Moya', function () {
-    return view('../Moya');
-});
+Route::get('/aboutUs', [PagesController::class,'aboutUs']);
 
-Route::get('/signUp', function () {
-    return view('/signUp');
-});
-Route::post('/registrado', [ClientsController::class,'storeClient']);
+//Route::get('/signUp',[PagesController::class, 'signUp']);
+
+Route::get('/logIn',[PagesController::class, 'logIn']);
+
+Route::get('/register',[PagesController::class, 'register']);
+
+//Route::post('/registrado', [ClientsController::class,'storeClient']);
 
 Route::get('/forgotPassword',[PagesController::class,'forgotPassword']);
 
+Route::get('/noGrid',[PagesController::class,'noGrid']);
 
 
 Route::post('/posts', 'PostsController@store');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

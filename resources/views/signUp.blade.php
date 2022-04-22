@@ -69,7 +69,7 @@
                 <input type="submit" value= "Regístrate" class="btn btn-primary btn-block btn-lg text-white">
                 </div> 
 
-                <p class="text-center text-white mt-5 mb-0">¿Ya tienes una cuenta? <a href="inicio" class="fw-bold text-primary"><u>Inicia sesión aquí</u></a></p>
+                <p class="text-center text-white mt-5 mb-0">¿Ya tienes una cuenta? <a href="signIn" class="fw-bold text-primary"><u>Inicia sesión aquí</u></a></p>
 
               </form>
 

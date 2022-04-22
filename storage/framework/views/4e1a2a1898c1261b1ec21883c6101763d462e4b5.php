@@ -33,21 +33,14 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../inicio">Inicio</a>
+                <a class="nav-link active" aria-current="page" href="">Inicio</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Moya</a>
+                <a class="nav-link active"  aria-current="page" href="aboutUs">Sobre nosotros</a>
                 </li>
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Clientes
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <li><a class="dropdown-item" href="entrenamientos"><?php echo e($user->name); ?> <?php echo e($user->apellido); ?></a></li>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                </ul>
-
+                <li class="nav-item">
+                <a class="nav-link" href="#">sas</a>
+                </li>
                 </ul>
             </div>
             </div>

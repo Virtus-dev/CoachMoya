@@ -1,6 +1,7 @@
 @extends('grid.grid')
 
 @section('contenidoPrincipal') 
+
 <head>
     <title>Hanfit wellnes center. Inicio de sesion</title>
 
@@ -57,10 +58,10 @@
             </div>
 
                 <div class="d-flex justify-content-center">
-                  <button type="button" class="btn btn-primary btn-block btn-lg text-white">Registrate</button>
+                  <button type="button" class="btn btn-primary btn-block btn-lg text-white">Cambiar contraseña</button>
                 </div> 
 
-                <p class="text-center text-white mt-5 mb-0">¿Ya tienes una cuenta? <a href="inicio" class="fw-bold text-primary"><u>Inicia sesión aquí</u></a></p>
+                <p class="text-center text-white mt-5 mb-0">¿Ya tienes una cuenta? <a href="signIn" class="fw-bold text-primary"><u>Inicia sesión aquí</u></a></p>
 
               </form>
 

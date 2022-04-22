@@ -33,21 +33,14 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../inicio">Inicio</a>
+                <a class="nav-link active" aria-current="page" href="">Inicio</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Moya</a>
+                <a class="nav-link active"  aria-current="page" href="aboutUs">Sobre nosotros</a>
                 </li>
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Clientes
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  @foreach($users as $user)
-                    <li><a class="dropdown-item" href="entrenamientos">{{$user->name}} {{$user->apellido}}</a></li>
-                    @endforeach
-                </ul>
-
+                <li class="nav-item">
+                <a class="nav-link" href="#">sas</a>
+                </li>
                 </ul>
             </div>
             </div>

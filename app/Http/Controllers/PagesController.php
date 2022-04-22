@@ -5,46 +5,67 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Ejercicio;
 use App\Models\User;
+use App\Http\ClientsController;
+
 
 class PagesController extends Controller
 {
 
-
-    public function index()
+    public function noGrid()
     {
-        //
+        //redirige a la pagina de inicio que es la de iniciar sesion
         $users=User::all();
-        return view('inicio',compact('users'));
+        return view('grid.noGrid',compact('users'));
 
     }
 
     public function aboutUs()
     {
-        //
-        return view('aboutUs.blade');
+        //redirige a la pagina sobre nosotros
+        return view('aboutUs');
 
     }
 
-
-     //redirige a la pagina sign in
-    public function signIn()
+    public function welcome()
     {
-        //
-        return view('');
-       
+        //redirige a la pagina de inicio que es la de iniciar sesion
+        return view('welcome');
+
     }
 
+    public function logIn()
+    {
+       //redirige a la pagina de inicio que es la de iniciar sesion
+       return view('auth/logIn');
+
+   }
+
+   public function register()
+   {
+      //redirige a la pagina de inicio que es la de iniciar sesion
+      return view('auth/register');
+
+  }
+
+  public function forgotPassword()
+  {
+
+      return view('password/reset');
+  }
+/*
     public function signUp()
     {
         return view('signUp');
     }
 
-    public function forgotPassword()
+    //redirige a la pagina sign in
+    public function signIn()
     {
+    //redirige a la pagina de inicio que es la de iniciar sesion
+    return view('signIn');
 
-        return view('forgotPassword');
-    }
-
+}
+*/
     public function editClient($id)
     {
         /*
@@ -89,7 +110,7 @@ class PagesController extends Controller
     {
         $workouts=Entreno::all()->where('user_id',$id);
         $user=User::find($id);
-        return view('entrenamientos',compact('workouts','user'));
+        return view('workouts',compact('workouts','user'));
     }
 
 
