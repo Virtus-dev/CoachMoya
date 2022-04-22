@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\ClientsController;
 use App\Models\User;
 /*
 |--------------------------------------------------------------------------
@@ -26,13 +27,9 @@ Route::get('/Moya', function () {
     return view('../Moya');
 });
 
-Route::get('/signUp', function () {
-    return view('/signUp');
-});
+Route::get('/signUp',[PagesController::class,'signUp']);
 Route::post('/registrado', [ClientsController::class,'storeClient']);
 
 Route::get('/forgotPassword',[PagesController::class,'forgotPassword']);
 
 
-
-Route::post('/posts', 'PostsController@store');

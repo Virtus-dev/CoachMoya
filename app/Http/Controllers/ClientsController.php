@@ -3,9 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Ejercicio;
 
 class ClientsController extends Controller
 {
+    
+    public function findClient(Request $request)
+    {
+        $user=User::where('email',$request->email)
+        ->and('password',$request->contraseña);
+        return $user;
+    }
+
+
+
     //Funcion para almacenar un nuevo cliente en la base de datos
     public function storeClient(Request $request)
     {
@@ -42,7 +54,7 @@ class ClientsController extends Controller
     
    
 
-    public function update(Request $request, $userId, $workoutId)
+    public function updateWorkout(Request $request, $userId, $workoutId)
     {
         //variables para localizar el usuario y el entreno a modificar
         $usertUpdate=User::find($userId);

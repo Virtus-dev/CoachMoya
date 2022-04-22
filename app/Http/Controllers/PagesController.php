@@ -30,7 +30,8 @@ class PagesController extends Controller
     public function signIn()
     {
         //
-        return view('');
+        
+        return view('signIn',compact([ClientsController::class,'findClient']));
        
     }
 

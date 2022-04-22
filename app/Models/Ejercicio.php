@@ -15,13 +15,17 @@ class Ejercicio extends Model
         'Nombre_Ejercicio',
         'Sets',
         'Reps',
-        'RM_Historico',
         'Marca',
         'Marca_Cliente',
         'Observaciones'
 
     ];
     */
+
+    public function entrenamiento()
+    {
+        return $this->belongsTo(Entreno::class);
+    }
 
     public function reps(){
         

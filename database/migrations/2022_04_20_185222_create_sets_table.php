@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRepsTable extends Migration
+class CreateSetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateRepsTable extends Migration
      */
     public function up()
     {
-        Schema::create('reps', function (Blueprint $table) {
+        Schema::create('sets', function (Blueprint $table) {
             $table->id();
-            $table->integer('numero_reps');
+            $table->Integer('numero_sets');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateRepsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reps');
+        Schema::dropIfExists('sets');
     }
 }

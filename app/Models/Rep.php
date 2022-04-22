@@ -11,7 +11,7 @@ class Rep extends Model
 
     public function ejercicios()
         {
-            return $this->belongsToMany('App\Models\Ejercicio');
+            return $this->belongsToMany(Ejercicio::class);
         }
     
 }

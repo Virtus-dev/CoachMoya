@@ -43,11 +43,11 @@
     <h1 class="h3 mb-3 fw-normal">Por favor, inicie sesión</h1>
 
     <div class="form-floating">
-      <input type="text" class="form-control" id="Email" name="Email">
+      <input type="text" class="form-control" id="email" name="email">
       <label for="floatingInput"class="text-black">Dirección de email</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="Contraseña" name="Contraseña">
+      <input type="password" class="form-control" id="contraseña" name="contraseña">
       <label for="floatingPassword"class="text-black">Contraseña</label> 
     </div>
 

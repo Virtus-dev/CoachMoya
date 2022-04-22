@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMarcaClientesTable extends Migration
+class CreateEntrenosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateMarcaClientesTable extends Migration
      */
     public function up()
     {
-        Schema::create('marca_clientes', function (Blueprint $table) {
+        Schema::create('entrenos', function (Blueprint $table) {
             $table->id();
-            $table->decimal('marcas_clientes');
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('ejercicio_id')->constrained();
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateMarcaClientesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('marca_clientes');
+        Schema::dropIfExists('entrenos');
     }
 }

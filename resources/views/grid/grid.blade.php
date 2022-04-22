@@ -43,9 +43,9 @@
                     Clientes
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  @foreach($users as $user)
-                    <li><a class="dropdown-item" href="entrenamientos">{{$user->name}} {{$user->apellido}}</a></li>
-                    @endforeach
+                 
+                    <li><a class="dropdown-item" href="entrenamientos"></a></li>
+                 
                 </ul>
 
                 </ul>

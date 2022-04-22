@@ -11,6 +11,6 @@ class Marca extends Model
 
     public function ejercicios()
     {
-        return $this->belongsTo('App\Models\Ejercicio');
+        return $this->belongsTo(Ejercicio::class);
     }
 }
