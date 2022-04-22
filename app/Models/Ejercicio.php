@@ -15,7 +15,6 @@ class Ejercicio extends Model
         'Nombre_Ejercicio',
         'Sets',
         'Reps',
-        'RM_Historico',
         'Marca',
         'Marca_Cliente',
         'Observaciones'
@@ -26,6 +25,14 @@ class Ejercicio extends Model
     public function entrenamiento()
     {
         return $this->belongsTo(Entreno::class);
+<<<<<<< HEAD
+=======
+    }
+
+    public function reps(){
+        
+        return $this->hasOne(Rep::class);
+>>>>>>> 31d2b8a4a45f5d1c9defcb95d45eff82dd0877d2
     }
 
     public function reps(){

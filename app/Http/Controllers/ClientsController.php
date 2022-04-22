@@ -8,6 +8,16 @@ use App\Models\Ejercicio;
 
 class ClientsController extends Controller
 {
+    
+    public function findClient(Request $request)
+    {
+        $user=User::where('email',$request->email)
+        ->and('password',$request->contraseña);
+        return $user;
+    }
+
+
+
     //Funcion para almacenar un nuevo cliente en la base de datos
     public function findClient(Request $request)
     {

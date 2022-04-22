@@ -15,10 +15,12 @@ class CreateEjerciciosTable extends Migration
     {
         Schema::create('ejercicios', function (Blueprint $table) {
             $table->id();
-            $table->string('Nombre_Ejercicio');           
-            $table->string('Observaciones')->nullable(true);
+            $table->foreignId('set_id')->constrained();
+            $table->foreignId('rep_id')->constrained();
+            $table->foreignId('marca_id')->constrained();
+            $table->string('nombre_ejercicio');
+            $table->text('observaciones');
             $table->timestamps();
-
         });
     }
 

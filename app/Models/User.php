@@ -47,7 +47,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-
+/*
     public function sets()
     {
         return $this->hasOneTrough(Set::class,Ejercicio::class);
@@ -67,5 +67,7 @@ class User extends Authenticatable
     {
         return $this->hasOneThrough(MarcaCliente::class,Ejercicio::class);
     }
+
+*/
     
 }

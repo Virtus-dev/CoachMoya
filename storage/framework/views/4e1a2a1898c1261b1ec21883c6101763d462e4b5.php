@@ -41,6 +41,19 @@
                 <li class="nav-item">
                 <a class="nav-link" href="#">sas</a>
                 </li>
+<<<<<<< HEAD
+=======
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Clientes
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                 
+                    <li><a class="dropdown-item" href="entrenamientos"></a></li>
+                 
+                </ul>
+
+>>>>>>> 31d2b8a4a45f5d1c9defcb95d45eff82dd0877d2
                 </ul>
             </div>
             </div>

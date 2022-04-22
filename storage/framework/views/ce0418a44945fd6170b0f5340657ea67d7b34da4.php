@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('contenidoPrincipal'); ?> 
 <head>
     <title>Hanfit wellnes center. Inicio de sesion</title>

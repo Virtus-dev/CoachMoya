@@ -28,12 +28,17 @@ Route::get('/aboutUs', [PagesController::class,'aboutUs']);
 Route::get('/logIn',[PagesController::class, 'logIn']);
 
 Route::get('/register',[PagesController::class, 'register']);
-
+/*
 //Route::post('/registrado', [ClientsController::class,'storeClient']);
 
+Route::get('/signUp',[PagesController::class,'signUp']);
+Route::post('/registrado', [ClientsController::class,'storeClient']);
+
+*/
 Route::get('/forgotPassword',[PagesController::class,'forgotPassword']);
 
 Route::get('/noGrid',[PagesController::class,'noGrid']);
+
 
 
 Route::post('/posts', 'PostsController@store');
