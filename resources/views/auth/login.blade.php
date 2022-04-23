@@ -13,7 +13,7 @@
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">  <!-- Enlace a la ruta con nombre 'login', en web.php se cargan automaticamente -->
-                        @csrf
+                    @csrf
                          <h1 class="h3 mb-3 fw-normal">Por favor, inicie sesión</h1>
                         <div class="row mb-3">
      
@@ -70,7 +70,7 @@
                                 @endif
                             </div>
                             @if (session('warning'))
-                                    <div class="alert alert-warning">   <!-- el warning me falla, no me aparece-->
+                                    <div class="alert alert-warning">   
                                         {{ session('warning') }}
                                     </div>
                                 @endif
@@ -79,8 +79,6 @@
                                     {{ session('status') }}
                                 </div>
                                 @endif
-                                
-
                         </div>
                     </form>
                 </div>

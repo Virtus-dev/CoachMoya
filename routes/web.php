@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
-use App\Http\Controllers\ClientsController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\HomeController;
 use App\Models\User;
 /*
 |--------------------------------------------------------------------------
@@ -15,35 +16,23 @@ use App\Models\User;
 |
 */
 
-Route::get('/',[PagesController::class,'welcome']);
+Auth::routes();
+// Rutas del sistema de autentificacion, estan en un metodo aparte estatico, automatico
+Route::get('/user/verify/{token}', 'App\Http\Controllers\Auth\RegisterController@verifyUser');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Route::get('/signIn',[PagesController::class,'signIn']);
+Route::get('/',[PagesController::class,'welcome']);
 
 Route::get('/workouts',[PagesController::class,'workouts']);
 
 Route::get('/aboutUs', [PagesController::class,'aboutUs']);
 
-//Route::get('/signUp',[PagesController::class, 'signUp']);
-
 Route::get('/logIn',[PagesController::class, 'logIn']);
 
 Route::get('/register',[PagesController::class, 'register']);
-/*
-Route::post('/registrado', [ClientsController::class,'storeClient']);
 
-Route::get('/signUp',[PagesController::class,'signUp']);
-Route::post('/registrado', [ClientsController::class,'storeClient']);
-
-*/
 Route::get('/forgotPassword',[PagesController::class,'forgotPassword']);
 
 Route::get('/noGrid',[PagesController::class,'noGrid']);
 
-
-
 Route::post('/posts', 'PostsController@store');
-// Rutas del sistema de autentificacion, estan en un metodo aparte estatico, automatico
-Auth::routes();
-
-Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

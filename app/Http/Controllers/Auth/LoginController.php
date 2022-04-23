@@ -7,7 +7,9 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\DemoMail;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use App\VerifyUser;
+use App\Models\VerifyUser;
+use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 
 class LoginController extends Controller
 {
@@ -22,27 +24,34 @@ class LoginController extends Controller
     |
     */
  
-        public function __construct()
+
+    use AuthenticatesUsers;
+
+    /**
+     * Where to redirect users after login.
+     *
+     * @var string
+     */
+    protected $redirectTo = '/home';
+
+    public function __construct()
     {
         $this->middleware('guest')->except('logout');
     }
-    public function showLoginForm()
+
+
+    public function authenticated(Request $request, $user)
     {
-      return view('auth.login');
+        if (!$user->verified) {
+            auth()->logout();
+            return back()->with('warning', 'Necesitas confirmar tu cuenta. Te hemos enviado un enlace de activación, por favor mira tu email.');
+        }
+        return redirect()->intended($this->redirectPath());
     }
+ 
 
-    public function login()
-    {
-       //redirige a la pagina de inicio que es la de iniciar sesion
-       return view('auth/login');
 
-   }
-   public function authenticated(Request $request, $user)
-   {
-       if (!$user->verified) {
-           auth()->logout();
-           return back()->with('warning', 'Necesitas confirmar tu cuenta. Te hemos enviado un enlace de activación, por favor mira tu email.');
-       }
-       return redirect('/logIn')->intended($this->redirectPath());
-   }
+
+
+
 }
