@@ -12,25 +12,27 @@
             <div class="card text-white bg-dark">
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('login') }}">  <!-- Enlace a la ruta con nombre 'login', en web.php se cargan automaticamente -->
                         @csrf
-                         <h1 class="h3 mb-3 fw-normal text-white bg-dark">Por favor, inicie sesión</h1>
+                         <h1 class="h3 mb-3 fw-normal">Por favor, inicie sesión</h1>
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+     
+                            <label for="email" class="col-md-4 col-form-label text-md-end">Dirección de email</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
+                                <!-- Se determina que tambien tiene que darlo como invalido en todo caso y cuando pasa eso-->
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus> 
+                                                                                                                    <!-- para retener el valor de un caja de texto y compararlo-->
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>{{ $message }}</strong> <!-- mensaje predefinido para el email, tambien existe uno para password, etc. -->
                                     </span>
                                 @enderror
                             </div>
                         </div>
 
                         <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label> <!-- forma rapida para introducir una cadena json -->
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
@@ -67,6 +69,18 @@
                                     </a>
                                 @endif
                             </div>
+                            @if (session('warning'))
+                                    <div class="alert alert-warning">   <!-- el warning me falla, no me aparece-->
+                                        {{ session('warning') }}
+                                    </div>
+                                @endif
+                            @if (session('status'))
+                                <div class="alert alert-success">
+                                    {{ session('status') }}
+                                </div>
+                                @endif
+                                
+
                         </div>
                     </form>
                 </div>
@@ -74,4 +88,5 @@
         </div>
     </div>
 </div>
+
 @endsection

@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Ejercicio;
 use App\Models\User;
+use App\Models;
 use App\Http\ClientsController;
-
+use App\Http\Controllers\Auth;
+use App\VerifyUser;
 
 class PagesController extends Controller
 {
@@ -52,20 +54,7 @@ class PagesController extends Controller
 
       return view('password/reset');
   }
-/*
-    public function signUp()
-    {
-        return view('signUp');
-    }
 
-    //redirige a la pagina sign in
-    public function signIn()
-    {
-    //redirige a la pagina de inicio que es la de iniciar sesion
-    return view('signIn');
-
-}
-*/
     public function editClient($id)
     {
         /*

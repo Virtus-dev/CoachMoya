@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models;
 use App\Models\Ejercicio;
+use App\VerifyUser;
+use App\Http\Controllers\Auth;
 
 class ClientsController extends Controller
 {
@@ -16,15 +19,6 @@ class ClientsController extends Controller
         return $user;
     }
 
-
-
-    //Funcion para almacenar un nuevo cliente en la base de datos
-    public function findClient(Request $request)
-    {
-        $user=User::where('email',$request->email)
-        ->and('password',$request->contraseña);
-        return $user;
-    }
 
     
     public function storeClient(Request $request)

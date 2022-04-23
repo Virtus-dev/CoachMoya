@@ -29,7 +29,7 @@ Route::get('/logIn',[PagesController::class, 'logIn']);
 
 Route::get('/register',[PagesController::class, 'register']);
 /*
-//Route::post('/registrado', [ClientsController::class,'storeClient']);
+Route::post('/registrado', [ClientsController::class,'storeClient']);
 
 Route::get('/signUp',[PagesController::class,'signUp']);
 Route::post('/registrado', [ClientsController::class,'storeClient']);
@@ -42,7 +42,8 @@ Route::get('/noGrid',[PagesController::class,'noGrid']);
 
 
 Route::post('/posts', 'PostsController@store');
-
+// Rutas del sistema de autentificacion, estan en un metodo aparte estatico, automatico
 Auth::routes();
 
+Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

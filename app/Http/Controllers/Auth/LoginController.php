@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\DemoMail;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\VerifyUser;
 
 class LoginController extends Controller
 {
@@ -18,23 +21,28 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
-
-    use AuthenticatesUsers;
-
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = RouteServiceProvider::HOME;
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+ 
+        public function __construct()
     {
         $this->middleware('guest')->except('logout');
     }
+    public function showLoginForm()
+    {
+      return view('auth.login');
+    }
+
+    public function login()
+    {
+       //redirige a la pagina de inicio que es la de iniciar sesion
+       return view('auth/login');
+
+   }
+   public function authenticated(Request $request, $user)
+   {
+       if (!$user->verified) {
+           auth()->logout();
+           return back()->with('warning', 'Necesitas confirmar tu cuenta. Te hemos enviado un enlace de activación, por favor mira tu email.');
+       }
+       return redirect('/logIn')->intended($this->redirectPath());
+   }
 }

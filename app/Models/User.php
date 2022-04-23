@@ -47,6 +47,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function verifyUser()
+    {
+        return $this->hasOne('App\Models\VerifyUser');
+    }
 /*
     public function sets()
     {
