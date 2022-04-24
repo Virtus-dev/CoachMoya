@@ -28,6 +28,13 @@ class PagesController extends Controller
 
     }
 
+    public function insertWorkout()
+    {
+        //redirige a la pagina sobre nosotros
+        return view('insertWorkout');
+
+    }
+
     public function welcome()
     {
         //redirige a la pagina de inicio que es la de iniciar sesion
