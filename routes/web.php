@@ -23,6 +23,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/',[PagesController::class,'welcome']);
 
+Route::get('/insertWorkout',[PagesController::class,'insertWorkout']);
+
 Route::get('/workouts',[PagesController::class,'workouts']);
 
 Route::get('/aboutUs', [PagesController::class,'aboutUs']);
