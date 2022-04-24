@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Ejercicio;
 use App\Models\User;
 use App\Models;
-use App\Http\ClientsController;
+use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\Auth;
 use App\VerifyUser;
 
@@ -34,11 +34,24 @@ class PagesController extends Controller
         return view('welcome');
 
     }
+    
+    //inserta un nuevo ejercicio
+    public function insertWorkout(Request $request)
+    {
+     $workout=new Ejercicio;
+     $workout->nombre_ejercicio=$request->nombreEjercicio;
+     $workout->set_id=$request->setId;  
+     $workout->rep_id=$request->repId; 
+     $workout->observaciones=$request->observaciones;
+
+     $workout->save();
+    }
 
     public function workouts()
     {
         //redirige a la pagina de inicio que es la de iniciar sesion
-        return view('workouts');
+        $ejercicios=Ejercicio::all();
+        return view('workouts',compact($ejercicios));
 
     }
 
