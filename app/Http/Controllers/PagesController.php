@@ -35,6 +35,13 @@ class PagesController extends Controller
 
     }
 
+    public function workouts()
+    {
+        //redirige a la pagina de inicio que es la de iniciar sesion
+        return view('workouts');
+
+    }
+
     public function logIn()
     {
        //redirige a la pagina de inicio que es la de iniciar sesion
