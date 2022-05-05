@@ -15,6 +15,7 @@ use App\Models\User;
 | contains the "web" middleware group. Now create something great!
 |
 */
+App::setLocale("es");
 
 Auth::routes();
 // Rutas del sistema de autentificacion, estan en un metodo aparte estatico, automatico
@@ -25,15 +26,13 @@ Route::get('/',[PagesController::class,'welcome']);
 
 Route::get('/insertWorkout',[PagesController::class,'insertWorkout']);
 
+Route::get('/insertWorkouts', 'PagesController@insertWorkouts')->name('insertWorkouts');
+
 Route::get('/workouts',[PagesController::class,'workouts']);
 
 Route::get('/aboutUs', [PagesController::class,'aboutUs']);
 
 Route::get('/logIn',[PagesController::class, 'logIn']);
-
-Route::get('/register',[PagesController::class, 'register']);
-
-Route::get('/forgotPassword',[PagesController::class,'forgotPassword']);
 
 Route::get('/noGrid',[PagesController::class,'noGrid']);
 

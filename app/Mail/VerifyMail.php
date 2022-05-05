@@ -6,8 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\SerializesModels;
-use App\Models;
-use App\VerifyUser;
+
 
 class VerifyMail extends Mailable
 {
@@ -30,7 +29,10 @@ class VerifyMail extends Mailable
      * @return $this
      */
     public function build()
+    
     {
-        return $this->view('emails.verifyUser');
+        return $this
+        ->subject('Entrenamientos hanfit wellness center la vila - Verificacion de email.')
+        ->view('emails.verifyUser');
     }
 }

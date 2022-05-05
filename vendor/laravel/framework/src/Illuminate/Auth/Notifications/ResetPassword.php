@@ -75,12 +75,16 @@ class ResetPassword extends Notification
     protected function buildMailMessage($url)
     {
         return (new MailMessage)
-            ->subject(Lang::get('Reset Password Notification'))
-            ->line(Lang::get('You are receiving this email because we received a password reset request for your account.'))
-            ->action(Lang::get('Reset Password'), $url)
-            ->line(Lang::get('This password reset link will expire in :count minutes.', ['count' => config('auth.passwords.'.config('auth.defaults.passwords').'.expire')]))
-            ->line(Lang::get('If you did not request a password reset, no further action is required.'));
+            ->subject(Lang::get('Entrenamientos hanfit wellness center la vila - Cambio de contraseña'))
+            ->greeting(Lang::get('Hola'))
+            ->line(Lang::get('Recibiste este correo electrónico porque recibimos una solicitud de restablecimiento de contraseña para tu cuenta.'))
+            ->action(Lang::get('Cambia la contraseña'), $url)
+            ->line(Lang::get('Este link caducará en :count minutos.', ['count' => config('auth.passwords.'.config('auth.defaults.passwords').'.expire')]))
+            ->line(Lang::get('Si no has enviado una solicitud de restablecimiento de contraseña, ignora este correo electrónico.'))
+            ->salutation(Lang::get('Gracias'))
+            ->salutation(Lang::get('Entrenamientos hanfit wellness center la vila'));
     }
+
 
     /**
      * Get the reset URL for the given notifiable.

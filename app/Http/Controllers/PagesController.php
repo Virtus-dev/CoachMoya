@@ -43,7 +43,7 @@ class PagesController extends Controller
     }
     
     //inserta un nuevo ejercicio
-    public function insertWorkout(Request $request)
+    public function insertWorkouts(Request $request)
     {
      $workout=new Ejercicio;
      $workout->nombre_ejercicio=$request->nombreEjercicio;

@@ -7,7 +7,7 @@
             <div class="card text-white bg-dark ">
                 <div class="card-header">{{ __('Insertar') }}</div>
                 <div class="card-body" >
-                    <form method="POST" action="{{ route('insertWorkout') }}">
+                    <form method="POST" action="{{ route('insertWorkouts') }}">
                 <div class="row mb-3">
                         <label for="nombreEjercicio" class="col-md-4 col-form-label text-md-end">{{ __('Nombre Ejercicio') }}</label>
 
