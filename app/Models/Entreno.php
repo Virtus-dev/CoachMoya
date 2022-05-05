@@ -9,11 +9,13 @@ class Entreno extends Model
 {
     use HasFactory;
 
+    protected $fillable=[
+      
+      'user_id',
+      'microciclo'  
 
-    public function ejercicio()
-    {
-        return $this->hasMany(Ejercicio::class);
-    }
+    ];
+
 
     
 }

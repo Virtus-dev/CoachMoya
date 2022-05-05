@@ -52,6 +52,32 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Models\VerifyUser');
     }
+
+    
+    public function ejercicios()
+    {
+        return $this->hasManyThrough(Ejercicio::class,Entreno::class);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 /*
     public function sets()
     {

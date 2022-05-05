@@ -22,10 +22,6 @@ class Ejercicio extends Model
     ];
     */
 
-    public function entrenamiento()
-    {
-        return $this->belongsTo(Entreno::class);
-    }
 
     public function reps(){
         
