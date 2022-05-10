@@ -60,6 +60,7 @@ class PagesController extends Controller
         return view('workouts');
 
     }
+    
 
     public function showWorkouts()
     {

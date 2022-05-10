@@ -30,7 +30,7 @@ Route::get('/insertWorkouts', 'PagesController@insertWorkouts')->name('insertWor
 
 Route::get('/workouts',[PagesController::class,'workouts']);
 
-Route::get('/showWorkouts',[PagesController::class,'showWorkouts']);
+Route::get('/showorkouts',[PagesController::class,'showWorkouts']);
 
 Route::get('/aboutUs', [PagesController::class,'aboutUs']);
 
