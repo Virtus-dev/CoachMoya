@@ -57,8 +57,14 @@ class PagesController extends Controller
     public function workouts()
     {
         //redirige a la pagina de inicio que es la de iniciar sesion
-        $ejercicios=Ejercicio::all();
-        return view('workouts',compact($ejercicios));
+        return view('workouts');
+
+    }
+
+    public function showWorkouts()
+    {
+        //redirige a la pagina de inicio que es la de iniciar sesion
+        return view('showWorkouts');
 
     }
 
