@@ -16,23 +16,26 @@
     </tr>
   </thead>
   <tbody>
-   {{-- @foreach ($ejercicios as $ejercicios)
-      <tr>
-        <td>{{ $ejercicios->Nombre_Ejercicio }}</td>
-        <td>{{ $ejercicios->Sets }}</td>
-        <td>{{ $ejercicios->Reps }}</td>
-        <td>{{ $ejercicios->RM_Historico }}</td>
-        <td>{{ $ejercicios->Marca }}</td>
-        <td>{{ $ejercicios->Marca_Cliente }}</td>
-        <td>{{ $ejercicios->Observaciones }}</td>
-      </tr>
-    @endforeach
-   --}}
-     <tr>
+    @foreach($user as $users)
+  <tr>
         <td scope="col">Press</td>
         <td scope="col">5</td>
         <td scope="col">8</td>
       </tr>
+      @endforeach
+   
+      <tr>
+        <td>{{ $user}}</td>
+        <td>{{  }}</td>
+        <td>{{  }}</td>
+        <td>{{  }}</td>
+        <td>{{  }}</td>
+        <td>{{  }}</td>
+        <td>{{  }}</td>
+      </tr>
+  
+  
+    
     <tr>
         <td scope="col">Press</td>
         <td scope="col">5</td>

@@ -12,10 +12,9 @@ use App\Http\Controllers\Auth;
 class ClientsController extends Controller
 {
     
-    public function findClient(Request $request)
+    public function findClient($id)
     {
-        $user=User::where('email',$request->email)
-        ->and('password',$request->contraseña);
+        $user=Ejercicio::where('user_id'->$id)->ejercicios()->get();
         return $user;
     }
 
@@ -24,11 +23,9 @@ class ClientsController extends Controller
     public function storeClient(Request $request)
     {
         $cliente=new User;
-        $cliente->name =$request-> Nombre;
-        $cliente->apellido=$request->Apellido;
-        $cliente->edad =$request->edad;
-        $cliente->email=$request->Email;
-        $cliente->password=$request->Contraseña;
+        $cliente->name =$request-> name;
+        $cliente->password=$request->password;
+        $cliente->email=$request->email;
 
         $cliente->save();
         return back()->with('success');        
