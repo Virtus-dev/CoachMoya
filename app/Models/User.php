@@ -20,8 +20,8 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'apellido',
-        'edad',
+        'surname',
+        'age',
         'email',
         'password',
         'RM_Historico_Squat',
