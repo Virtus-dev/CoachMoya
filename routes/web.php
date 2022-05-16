@@ -24,9 +24,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/',[PagesController::class,'welcome']);
 
-Route::get('/insertWorkout',[PagesController::class,'insertWorkout']);
-
-Route::get('/insertWorkouts', 'PagesController@insertWorkouts')->name('insertWorkouts');
+Route::post('/insertWorkouts', [PagesController::class,'insertWorkouts'])->name('insertWorkouts');
 
 Route::get('/workouts',[PagesController::class,'workouts']);
 
@@ -36,6 +34,4 @@ Route::get('/aboutUs', [PagesController::class,'aboutUs']);
 
 Route::get('/logIn',[PagesController::class, 'logIn']);
 
-Route::get('/noGrid',[PagesController::class,'noGrid']);
 
-Route::post('/posts', 'PostsController@store');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Ejercicio;
 use App\Models\User;
+use App\Models\Entreno;
 use App\Models;
 use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\Auth;
@@ -28,12 +29,6 @@ class PagesController extends Controller
 
     }
 
-    public function insertWorkout()
-    {
-        //redirige a la pagina sobre nosotros
-        return view('insertWorkout');
-
-    }
 
     public function welcome()
     {
@@ -45,13 +40,23 @@ class PagesController extends Controller
     //inserta un nuevo ejercicio
     public function insertWorkouts(Request $request)
     {
-     $workout=new Ejercicio;
-     $workout->nombre_ejercicio=$request->nombreEjercicio;
-     $workout->set_id=$request->setId;  
-     $workout->rep_id=$request->repId; 
-     $workout->observaciones=$request->observaciones;
+   
+     $workout=new Entreno;
+     foreach($request->all() as $req){
 
-     $workout->save();
+     $exercise=Ejercicio::create([
+
+      'entreno_id'=>$workout->id,
+      'nombre_ejercicio'=>$req['nombre_ejercicio'],
+      'observaciones'=>$req['observaciones']
+
+     ]);
+
+     $sets=Set::create(['numero_sets'=>$req['set_id']]);
+     $reps=Rep::create(['numero_reps'=>$req['rep_id']]);
+     $marcas=Marca::create(['marca_objetivo'=>$req['marca_id']]);
+     }
+     
     }
 
     public function workouts()

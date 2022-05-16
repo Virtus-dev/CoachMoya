@@ -2,6 +2,9 @@
 
 @section('contenidoPrincipal')
 
+
+<form method='post' action="{{route('insertWorkouts')}}">
+  @csrf
     <h1>Entrenamiento </h1>
     <h2>Lunes </h2>
     <table class="table bg-dark text-white">
@@ -292,5 +295,6 @@
 </table>
 
 <input type='submit' value='Enviar'>
+</form>
 
 @endsection

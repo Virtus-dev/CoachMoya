@@ -16,6 +16,7 @@ class Entreno extends Model
 
     ];
 
+    
 
     
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRepsTable extends Migration
+class CreateEjerciciosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateRepsTable extends Migration
      */
     public function up()
     {
-        Schema::create('reps', function (Blueprint $table) {
+        Schema::create('ejercicios', function (Blueprint $table) {
             $table->id();
-            $table->Integer('numero_reps');
+            $table->foreignId('entreno_id')->constrained();
+            $table->string('nombre_ejercicio');
+            $table->text('observaciones');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class CreateRepsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reps');
+        Schema::dropIfExists('ejercicios');
     }
 }

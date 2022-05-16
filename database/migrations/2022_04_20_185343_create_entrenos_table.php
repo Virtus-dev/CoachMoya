@@ -14,7 +14,6 @@ class CreateEntrenosTable extends Migration
         Schema::create('entrenos', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->foreignId('ejercicio_id')->constrained();
             $table->timestamps();
         });
     }

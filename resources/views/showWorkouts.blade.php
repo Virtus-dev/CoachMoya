@@ -16,19 +16,19 @@
   </thead>
   <tbody>
     <tr>
-      <td scope="col">press</td>
-      <td scope="col">1</td>
-      <td scope="col">2</td>
-      <td scope="col">3</td>
-      <td scope="col">Nada</td>
+      <td scope="col"></td>
+      <td scope="col"></td>
+      <td scope="col"></td>
+      <td scope="col"></td>
+      <td scope="col"></td>
 
     </tr>
     <tr>
-      <td scope="col">squat</td>
-      <td scope="col">1</td>
-      <td scope="col">2</td>
-      <td scope="col">3</td>
-      <td scope="col">Nada</td>
+      <td scope="col"></td>
+      <td scope="col"></td>
+      <td scope="col"></td>
+      <td scope="col"></td>
+      <td scope="col"></td>
 
     </tr>
   </tbody>
@@ -39,28 +39,28 @@
     <table class="table bg-dark text-white">
   <thead>
     <tr>
-      <th scope="col">Ejercicios</th>
-      <th scope="col">Sets</th>
-      <th scope="col">Reps</th>
-      <th scope="col">Marca</th>
-      <th scope="col">Observaciones</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
   <tr>
-      <td scope="col">dominada</td>
-      <td scope="col">1</td>
-      <td scope="col">2</td>
-      <td scope="col">3</td>
-      <td scope="col">Nada</td>
+      <td scope="col"></td>
+      <td scope="col"></td>
+      <td scope="col"></td>
+      <td scope="col"></td>
+      <td scope="col"></td>
 
     </tr>
     <tr>
-      <td scope="col">press</td>
-      <td scope="col">1</td>
-      <td scope="col">2</td>
-      <td scope="col">3</td>
-      <td scope="col">Nada</td>
+      <td scope="col"></td>
+      <td scope="col"></td>
+      <td scope="col"></td>
+      <td scope="col"></td>
+      <td scope="col"></td>
 
     </tr>
   </tbody>

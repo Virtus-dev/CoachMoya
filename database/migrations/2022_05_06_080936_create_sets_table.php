@@ -15,6 +15,7 @@ class CreateSetsTable extends Migration
     {
         Schema::create('sets', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('ejercicio_id')->constrained();
             $table->Integer('numero_sets');
             $table->timestamps();
         });

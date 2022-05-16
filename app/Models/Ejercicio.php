@@ -10,17 +10,14 @@ class Ejercicio extends Model
     use HasFactory;
 
     //permiso a laravel para modificar varios campos
-   /*
+   
     protected $fillable=[
-        'Nombre_Ejercicio',
-        'Sets',
-        'Reps',
-        'Marca',
-        'Marca_Cliente',
+        'nombre_ejercicio',
+        'entreno_id',
         'Observaciones'
 
     ];
-    */
+    
 
 
     public function reps(){
