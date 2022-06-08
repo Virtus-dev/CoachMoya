@@ -15,7 +15,6 @@ class CreateMarcasTable extends Migration
     {
         Schema::create('marcas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('ejercicio_id')->constrained();
             $table->decimal('marca_objetivo');
             $table->timestamps();
         });

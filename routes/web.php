@@ -24,6 +24,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/',[PagesController::class,'welcome']);
 
+Route::get('/insertWorkout',[PagesController::class,'insertWorkout']);
+
 Route::post('/insertWorkouts', [PagesController::class,'insertWorkouts'])->name('insertWorkouts');
 
 Route::get('/workouts',[PagesController::class,'workouts']);

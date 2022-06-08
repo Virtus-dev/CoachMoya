@@ -9,6 +9,10 @@ class Set extends Model
 {
     use HasFactory;
 
+    protected $fillable=[
+        'numero_sets'
+    ];
+
     public function ejercicios()
     {
         return $this->belongsToMany(Ejercicio::class);

@@ -14,6 +14,9 @@ class Ejercicio extends Model
     protected $fillable=[
         'nombre_ejercicio',
         'entreno_id',
+        'set_id',
+        'rep_id',
+        'marca_id',
         'Observaciones'
 
     ];

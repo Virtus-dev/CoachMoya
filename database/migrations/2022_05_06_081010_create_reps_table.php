@@ -15,7 +15,6 @@ class CreateRepsTable extends Migration
     {
         Schema::create('reps', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('ejercicio_id')->constrained();
             $table->Integer('numero_reps');
             $table->timestamps();
         });

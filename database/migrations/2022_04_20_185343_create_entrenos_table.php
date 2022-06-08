@@ -14,6 +14,8 @@ class CreateEntrenosTable extends Migration
         Schema::create('entrenos', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
+            $table->String('microciclo');
+            $table->String('dia_de_la_semana');
             $table->timestamps();
         });
     }

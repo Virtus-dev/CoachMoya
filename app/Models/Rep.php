@@ -9,6 +9,10 @@ class Rep extends Model
 {
     use HasFactory;
 
+    protected $fillable=[
+        'numero_reps'
+    ];
+
     public function ejercicios()
     {
         return $this->belongsToMany(Ejercicio::class);

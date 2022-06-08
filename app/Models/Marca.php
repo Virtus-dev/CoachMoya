@@ -9,6 +9,10 @@ class Marca extends Model
 {
     use HasFactory;
 
+    protected $fillable=[
+        'marca_objetivo'
+    ];
+
     public function ejercicios()
     {
         return $this->belongsTo(Ejercicio::class);

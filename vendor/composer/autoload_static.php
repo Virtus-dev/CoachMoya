@@ -557,6 +557,7 @@ class ComposerStaticInitcdc4bf0455fbb088623aed8a5ab23a67
         'App\\Models\\Set' => __DIR__ . '/../..' . '/app/Models/Set.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\VerifyUser' => __DIR__ . '/../..' . '/app/Models/VerifyUser.php',
+        'App\\Notifications\\MyResetPassword' => __DIR__ . '/../..' . '/app/Notifications/MyResetPassword.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',

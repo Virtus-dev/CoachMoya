@@ -12,7 +12,8 @@ class Entreno extends Model
     protected $fillable=[
       
       'user_id',
-      'microciclo'  
+      'microciclo',
+      'dia_de_la_semana'  
 
     ];
 
