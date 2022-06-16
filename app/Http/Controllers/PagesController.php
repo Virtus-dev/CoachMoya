@@ -34,93 +34,92 @@ class PagesController extends Controller
 
     public function welcome()
     {
-        //redirige a la pagina de inicio que es la de iniciar sesion
+        //redirige a la pagina de inicio
         return view('web/welcome');
 
     }
 
+    //añade las opciones desplegables en la pagina de insercion de entrenamientos
     public function insertWorkout()
     {
        
         $users=User::pluck('id','name');
         $workouts=Entreno::pluck('id','microciclo');
         $dayOfWeek=Entreno::pluck('id','dia_de_la_semana');
-        return view('dashboard.workouts',compact('users','workouts','dayOfWeek'));
+        return view('dashboard.insertWorkout',compact('users','workouts','dayOfWeek'));
     }
     
     //inserta un nuevo ejercicio
     public function insertWorkouts(Request $request)
     {
    
-     $input=$request->all();
-     $nombre_ejercicio=$input['nombre_ejercicio'];
-     $numero_sets=$input['set_id'];
-     $numero_reps=$input['rep_id'];
-     $marca_objetivo=$input['marca_id'];
-     $observaciones=$input['observaciones'];
+     $user=$request->user_id;
+     $microciclo=$request->microciclo;
+     //$dia_de_la_semana=$request->dia_de_la_semana;
+     $nombre_ejercicio=$request->nombre_ejercicio;
+     $numero_sets=$request->set_id;
+     $numero_reps=$request->rep_id;
+     $marca_objetivo=$request->marca_id;
+     $observaciones=$request->observaciones;
 
 
-     //dd($input);
+     $workout=Entreno::create(['user_id'=>$user,
+         'microciclo'=>$microciclo,
+         'dia_de_la_semana'=>"lunes"]);
 
-     $workout=Entreno::create(['user_id'=>$input['user_id'],
-     'microciclo'=>$input['microciclo'],
-     'dia_de_la_semana'=>"lunes"]);
-
-
-     foreach($numero_sets as $num_sets=>$set)
-        {
-          $sets=Set::create(['numero_sets'=>$set]);
-        }
-
-          foreach($numero_reps as $num_reps=>$rep)
-          {
-            $reps=Rep::create(['numero_reps'=>$rep]);
-          }
-
-
-        foreach($marca_objetivo as $marca_obj=>$marca)
-        {
-                $marcas=Marca::create(['marca_objetivo'=>$marca]);
-        }
-
-     foreach($observaciones as $obervacion=>$observ)
+     for($i=0;$i<count($nombre_ejercicio);$i++)
      {
-    
-        $observa=$observ;
+         
+       /*
+         $set_data_save=['numero_sets'=>$numero_sets[$i]];
+         $rep_data_save=['numero_reps'=>$numero_reps[$i]];
+         $marca_data_save=['marca_objetivo'=>$marca_objetivo[$i]];
+         $exercise_data_save=[
+            'nombre_ejercicio'=>$nombre_ejercicio[$i],
+            'set_id'=>$set->id,
+            'rep_id'=>$numero_reps[$i]->id,
+            'marca_id'=>$marca_objetivo[$i]->id
+        ];
+
+       */
+
+
+         $set=Set::create(['numero_sets'=>$numero_sets[$i]]);
+
+         $rep=Rep::create(['numero_reps'=>$numero_reps[$i]]);
+
+         $marca=Marca::create(['marca_objetivo'=>$marca_objetivo[$i]]);
+
+         $exercise=Ejercicio::create([
+            'nombre_ejercicio'=>$nombre_ejercicio[$i],
+            'entreno_id'=>$workout->id,
+            'set_id'=>$set->id,
+            'rep_id'=>$rep->id,
+            'marca_id'=>$marca->id,
+            'observaciones'=>$observaciones
+         ]); 
+         
 
      }
 
-
-     foreach($nombre_ejercicio as $nom_ejer=>$ejer)
-      {
-        
-
-      }
-   
-        
-      $exercise=Ejercicio::create(['nombre_ejercicio'=>$ejer,
-      'observaciones'=>$observa,
-      'entreno_id'=>$workout->id,
-      'set_id'=>$sets->id,
-      'rep_id'=>$reps->id,
-     'marca_id'=>$marcas->id]);    
-            
-      
-
+     return to_route("home");
+ 
     }
 
 
-    public function workout()
+    public function currentClients()
     {
-        //redirige a la pagina de inicio que es la de iniciar sesion
-        return view('web.workouts');
+      //retorna la vista con un listado de los clientes
+      $users=User::all();
+      $workouts=User::find(1)->entrenos()->latest('id')->first();
+        return view('web.currentClients',compact('users','workouts'));
 
     }
     
 
     public function showWorkouts()
     {
-        //redirige a la pagina de inicio que es la de iniciar sesion
+        
         return view('showWorkouts');
 
     }
@@ -187,9 +186,21 @@ class PagesController extends Controller
      //devuelve una vista de todos los entrenamientos en curso
     Public function showClientWorkouts($id)
     {
-        $workouts=Entreno::all()->where('user_id',$id);
         $user=User::find($id);
-        return view('workouts',compact('workouts','user'));
+        $workouts=User::find($id)->ejercicios
+        ->where('entreno_id','1');
+        //$sets=Set::find($workouts->set_id);
+        
+        foreach($workouts as $exercise)
+        {
+
+            $sets=Set::find($exercise->set_id)->get();
+            
+            
+        }
+
+        //dd($sets);
+        return view('web.showWorkouts',compact('workouts','user','sets'));
     }
 
 

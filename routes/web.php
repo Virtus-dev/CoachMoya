@@ -20,15 +20,19 @@ App::setLocale("es");
 Auth::routes();
 // Rutas del sistema de autentificacion, estan en un metodo aparte estatico, automatico
 Route::get('/user/verify/{token}', 'App\Http\Controllers\Auth\RegisterController@verifyUser');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'welcome'])->name('home');
 
 Route::get('/',[PagesController::class,'welcome']);
+
+Route::get('/currentClients',[PagesController::class,'currentClients']);
+
+Route::get('/client/{id}/workout',[PagesController::class,'showClientWorkouts']);
 
 Route::get('/insertWorkout',[PagesController::class,'insertWorkout']);
 
 Route::post('/insertWorkouts', [PagesController::class,'insertWorkouts'])->name('insertWorkouts');
 
-Route::get('/workouts',[PagesController::class,'workouts']);
+//Route::get('/workouts',[PagesController::class,'workouts']);
 
 Route::get('/showorkouts',[PagesController::class,'showWorkouts']);
 

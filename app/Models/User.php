@@ -59,6 +59,11 @@ class User extends Authenticatable
         return $this->hasManyThrough(Ejercicio::class,Entreno::class);
     }
 
+    public function entrenos()
+    {
+        return $this->hasMany(Entreno::class);
+    }
+
 
 
 

@@ -59,6 +59,47 @@
                             </div>
                         </div>
                         
+                        <div class="row mb-3">
+                            <label for="RM_Historico_Squat" class="col-md-4 col-form-label text-md-end">{{ __('RM Historico Sentadilla') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="RM_Historico_Squat" type="number" class="form-control @error('RM_Historico_Squat') is-invalid @enderror" name="RM_Historico_Squat" value="{{ old('RM_Historico_Squat') }}" autocomplete="RM_Historico_Squat" autofocus>
+
+                                @error('RM_Historico_Squat')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="RM_Historico_Bench" class="col-md-4 col-form-label text-md-end">{{ __('RM Historico Press Banca') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="RM_Historico_Bench" type="number" class="form-control @error('RM_Historico_Bench') is-invalid @enderror" name="RM_Historico_Bench" value="{{ old('RM_Historico_Bench') }}" autocomplete="RM_Historico_Bench" autofocus>
+
+                                @error('RM_Historico_Bench')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="RM_Historico_DeadLift" class="col-md-4 col-form-label text-md-end">{{ __('RM Historico Peso Muerto') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="RM_Historico_DeadLift" type="number" class="form-control @error('RM_Historico_DeadLift') is-invalid @enderror" name="RM_Historico_DeadLift" value="{{ old('RM_Historico_DeadLift') }}" autocomplete="RM_Historico_DeadLift" autofocus>
+
+                                @error('RM_Historico_Squat')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Dirección de email') }}</label>
